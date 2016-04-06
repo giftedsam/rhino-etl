@@ -60,6 +60,9 @@
     <Reference Include="Common.Logging">
       <HintPath>..\SharedLibs\Common.Logging\Common.Logging.dll</HintPath>
     </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>..\SharedLibs\Common.Logging\Common.Logging.Core.dll</HintPath>
+    </Reference>
     <Reference Include="FileHelpers">
       <HintPath>..\SharedLibs\FileHelpers\FileHelpers.dll</HintPath>
     </Reference>
@@ -81,10 +84,13 @@
     <Compile Include="Infrastructure\SqlCommandSet.cs" />
     <Compile Include="Infrastructure\Use.cs" />
     <Compile Include="Operations\AbstractBranchingOperation.cs" />
+    <Compile Include="Operations\AbstractJoinOperation.cs" />
+    <Compile Include="Operations\AbstractSortedAggregationOperation.cs" />
     <Compile Include="Operations\BranchingOperation.cs" />
     <Compile Include="Operations\JoinType.cs" />
     <Compile Include="Operations\MultiThreadedBranchingOperation.cs" />
     <Compile Include="Operations\NestedLoopsJoinOperation.cs" />
+    <Compile Include="Operations\SortMergeJoinOperation.cs" />
     <Compile Include="Pipelines\AbstractPipelineExecuter.cs" />
     <Compile Include="ConventionOperations\ConventionInputCommandOperation.cs" />
     <Compile Include="ConventionOperations\ConventionOutputCommandOperation.cs" />
@@ -116,12 +122,13 @@
     <Compile Include="Pipelines\PipelineExecutionException.cs" />
     <Compile Include="Pipelines\SingleThreadedNonCachedPipelineExecuter.cs" />
     <Compile Include="Pipelines\ThreadPoolPipelineExecuter.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Operations\SqlBulkInsertOperation.cs" />
     <Compile Include="Pipelines\SingleThreadedPipelineExecuter.cs" />
     <Compile Include="Exceptions\RhinoEtlException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuackingDictionary.cs" />
     <Compile Include="Row.cs" />
+    <Compile Include="RuntimeInfo.cs" />
     <Compile Include="WithLoggingMixin.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -144,6 +151,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

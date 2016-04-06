@@ -98,6 +98,7 @@
     <Compile Include="Aggregation\BaseDslTest.cs" />
     <Compile Include="Aggregation\CostPerProductAggregation.cs" />
     <Compile Include="Aggregation\RowCount.cs" />
+    <Compile Include="Aggregation\SortedCostPerProductAggregation.cs" />
     <Compile Include="BaseFibonacciTest.cs" />
     <None Include="Dsl\Aggregate.boo">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -111,6 +112,7 @@
     <Compile Include="Branches\SingleThreadedBranchesFixture.cs" />
     <Compile Include="Branches\SingleThreadedFibonacciBranchingProcess.cs" />
     <Compile Include="Dsl\AggregationFixture.cs" />
+    <Compile Include="Dsl\HashJoinFixture.cs" />
     <Compile Include="Dsl\DatabaseToDatabaseWithTransformFixture.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -128,6 +130,8 @@
     <Compile Include="Fibonacci\Batch\BatchFibonacciToDatabaseFromConnectionStringSettings.cs" />
     <Compile Include="Fibonacci\Batch\BatchFibonacciToDatabaseBase.cs" />
     <Compile Include="Fibonacci\Batch\BatchFibonacciFromConnectionStringSettings.cs" />
+    <Compile Include="Fibonacci\Batch\SlowBatchFibonacci.cs" />
+    <Compile Include="Fibonacci\Batch\SlowBatchFibonacciToDatabase.cs" />
     <Compile Include="Fibonacci\Bulk\BulkInsertFibonacciToDatabaseFromConnectionStringSettings.cs" />
     <Compile Include="Fibonacci\Bulk\FibonacciBulkInsertBase.cs" />
     <Compile Include="Fibonacci\Bulk\FibonacciBulkInsertFromConnectionStringSettings.cs" />
@@ -141,6 +145,7 @@
     <Compile Include="BaseUserToPeopleTest.cs" />
     <Compile Include="Fibonacci\Output\Should.cs" />
     <Compile Include="InformationFixture.cs" />
+    <Compile Include="Infrastructure\UseFixture.cs" />
     <Compile Include="Integration\UsersToPeopleFromConnectionStringSettings.cs" />
     <Compile Include="Integration\DatabaseToDatabaseWithTransformations.cs" />
     <Compile Include="Integration\ReadUsers.cs" />
@@ -151,16 +156,21 @@
     <Compile Include="Joins\AllStringsToUpperCase.cs" />
     <Compile Include="Joins\BaseJoinFixture.cs" />
     <Compile Include="Joins\BaseJoinUsersToPeople.cs" />
+    <Compile Include="Joins\BaseMergeJoin.cs" />
     <Compile Include="Joins\ComplexUsersToPeopleJoinProcess.cs" />
     <Compile Include="Joins\FullJoinUsersToPeopleByEmail.cs" />
+    <Compile Include="Joins\FullMergeJoinUsersToPeopleByEmail.cs" />
     <Compile Include="Joins\GenericEnumerableOperation.cs" />
     <Compile Include="Joins\InnerJoinUsersToPeopleByEmail.cs" />
+    <Compile Include="Joins\InnerMergeJoinUsersToPeopleByEmail.cs" />
     <Compile Include="Joins\JoinFixture.cs" />
     <Compile Include="Joins\JoinInProcessFixture.cs" />
     <Compile Include="Joins\JoinWithPipelineFixture.cs" />
     <Compile Include="Joins\JoinsEventsFixture.cs" />
     <Compile Include="Joins\LeftJoinUsersToPeopleByEmail.cs" />
+    <Compile Include="Joins\LeftMergeJoinUsersToPeopleByEmail.cs" />
     <Compile Include="Joins\RightJoinUsersToPeopleByEmail.cs" />
+    <Compile Include="Joins\RightMergeJoinUsersToPeopleByEmail.cs" />
     <Compile Include="Joins\TrivialUsersToPeopleJoinProcess.cs" />
     <Compile Include="LoadTest\AccumulateResults.cs" />
     <Compile Include="LoadTest\BatchUpdateUserNames.cs" />
@@ -208,10 +218,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Dsl\InnerJoin.boo">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Dsl\UsersToPeopleBulk.boo">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Dsl\InnerJoin.boo">
+    <None Include="Dsl\InnerHashJoin.boo">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Dsl\UsersToPeople.boo">
@@ -219,6 +232,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
   <ItemGroup>
